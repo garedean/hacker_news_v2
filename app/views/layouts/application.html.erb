@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HackerNewsV2</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="container-fluid">
+
+    <header class="clearfix">
+      <%= image_tag("/brand_img.gif", class: "brand-icon") %>
+
+      <span class="brand">Hacker News</span>
+
+      <ul class="nav">
+        <a href="#">new</a> |
+        <a href="comments">comments</a> |
+        <a href="show">show</a> |
+        <a href="ask">ask</a> |
+        <a href="jobs">jobs</a> |
+        <a href="submit">submit</a>
+      </ul>
+
+      <a href="#" class="login">login</a>
+    </header>
+
+    <%= yield %>
+
+  </div>
+
+</body>
+</html>

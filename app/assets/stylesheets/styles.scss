@@ -1,0 +1,32 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  padding: 0 85px;
+}
+.brand {
+  float: left;
+  margin-left: 5px;
+  line-height: 20px;
+}
+
+header {
+  margin-top: 8px;
+  padding: 2px;
+  a {
+    color: black;
+    display: inline-block;
+    line-height: 20px;
+    &:hover {
+      color: black;
+    }
+  }
+  ul.nav {
+    float: left;
+    margin-left: 20px;
+  }
+  .login {
+    float: right;
+    margin-right: 5px;
+  }
+}
