@@ -13,4 +13,94 @@ header {
 .brand-icon {
   border: 1px solid white;
   float: left;
+  line-height: initial;
+}
+
+.posts-wrapper {
+  background: rgb(246, 246, 239);
+  padding: 5px 10px;
+  .post-row {
+    margin: 5px 0;
+    a, a:hover {
+      color: #444;
+      text-decoration: none;
+
+      &.post-title {
+        font-size: 1.03em;
+      }
+    }
+    .post-url {
+      font-size: .8em;
+      color: #777;
+    }
+    ul > li {
+      margin: 0px;
+      &.bottom-row {
+        margin-left: 17px;
+        font-size: .7em;
+        color: #777;
+        line-height: 8px;
+        a {
+          color: #777;
+        }
+      }
+    }
+  }
+}
+
+.grayed {
+  color: #777;
+}
+
+.small {
+  font-size: .6em
+}
+
+.post-details {
+  padding: 0 15px;
+}
+
+textarea#comment_content {
+  height: 97px;
+  width: 497px;
+  margin: 10px 0;
+}
+
+input.add-comment {
+  margin-bottom: 30px;
+}
+
+#new-post {
+  label {
+    width: 50px;
+    text-transform: lowercase;
+    color: #777;
+  }
+  input[type="text"] {
+    width: 50%;
+  }
+}
+
+.submit-post {
+  margin-left: 53px;
+  text-transform: lowercase;
+}
+
+.author-name {
+  font-size: .75em;
+  color: #777;
+}
+
+.post-content {
+  font-size: .9em;
+}
+
+.post-comment {
+  margin-top: 10px;
+}
+
+.underline {
+  &:hover {
+    text-decoration: underline !important;
+  }
 }

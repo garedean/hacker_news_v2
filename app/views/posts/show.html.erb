@@ -1,0 +1,59 @@
+<%= render('layouts/errors', :object => @post) %>
+
+<% content_for :header_text, "Haaacker News" %>
+
+<% content_for :nav_menu do %>
+  <ul class="nav">
+    <a href="#">new</a> |
+    <a href="comments">comments</a> |
+    <a href="show">show</a> |
+    <a href="ask">ask</a> |
+    <a href="jobs">jobs</a> |
+    <%= link_to "submit", new_post_path %>
+  </ul>
+
+  <a href="#" class="login">login</a>
+<% end %>
+
+<div class="post-details">
+
+  <ul>
+    <li class="top-row">
+
+      <%= link_to @post.title, "https://www.#{@post.url}", class: "post-title" %>
+
+      <span class="post-url">
+        (<%= @post.url %>)
+      </span>
+    </li>
+    <li class="bottom-row grayed small">
+      by <%= @post.author %>
+      <%= link_to 'comments', post_path(@post), class: "post-title" %>
+    </li>
+  </ul>
+
+  <%= form_for [@post, @comment] do |f| %>
+    <%= f.text_area :content %>
+    <p>
+      <%= f.label :author %>
+      <br>
+      <%= f.text_field :author %>
+    </p>
+    <p><%= f.submit "add comment", class: "btn btn-default add-comment" %></p>
+  <% end %>
+
+  <ul>
+    <% @post.comments.each do |comment| %>
+      <li class="post-comment">
+        <ul>
+          <li class="author-name">
+            <%= comment.author %>
+          </li>
+          <li class="post-content">
+            <%= comment.content %>
+          </li>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,3 +1,4 @@
 class Comment < ActiveRecord::Base
-  validates :content, :presence => true
+  belongs_to :list
+  validates :content, :author, :presence => true
 end

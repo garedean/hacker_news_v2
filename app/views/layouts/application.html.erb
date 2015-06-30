@@ -5,29 +5,73 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico' %>
 </head>
 <body>
+
+  <div class="flash-wrapper">
+    <% if flash[:notice] %>
+    <p class="flash">
+      <%= flash[:notice] %>
+    </p>
+    <% end %>
+  </div>
 
   <div class="container-fluid">
 
     <header class="clearfix">
-      <%= image_tag("/brand_img.gif", class: "brand-icon") %>
+      <%= link_to "/", class: "brand-icon" do %>
+        <%= image_tag("/brand_img.gif") %>
+      <% end %>
 
-      <span class="brand">Hacker News</span>
+      <span class="brand">
+        <%= yield :header_text %>
+      </span>
 
-      <ul class="nav">
-        <a href="#">new</a> |
-        <a href="comments">comments</a> |
-        <a href="show">show</a> |
-        <a href="ask">ask</a> |
-        <a href="jobs">jobs</a> |
-        <a href="submit">submit</a>
-      </ul>
-
-      <a href="#" class="login">login</a>
+      <%= yield :nav_menu %>
     </header>
 
-    <%= yield %>
+    <div class="posts-wrapper">
+      <%= yield %>
+    </div>
+
+    <footer>
+      <ul class="footer-links clearfix">
+        <li>
+          <a href="#">Guidlines</a>
+        </li>
+        <li>
+          <a href="#">FAQ</a>
+        </li>
+        <li>
+          <a href="#">Support</a>
+        </li>
+        <li>
+          <a href="#">Security</a></li>
+        <li>
+          <a href="#">Lists</a>
+        </li>
+        <li>
+          <a href="#">Bookmarklet</a>
+        </li>
+        <li>
+          <a href="#">DMCA</a>
+        </li>
+        <li>
+          <a href="#">Apply to YC</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+
+      <div class="footer-search">
+        <span class="grayed">Search:</span>
+        <span>
+          <input>
+        </span>
+      </div>
+    </footer>
 
   </div>
 
