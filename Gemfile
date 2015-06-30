@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby "2.2.0"
-
 gem 'rails'
 gem 'pg'
 gem 'bootstrap-sass', '~> 3.3.5.1'
@@ -26,4 +24,7 @@ end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'capybara', '~> 2.4.4'
 end
+
+ruby "2.2.0"
