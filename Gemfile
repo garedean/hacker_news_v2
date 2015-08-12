@@ -26,5 +26,3 @@ group :test do
   gem 'shoulda-matchers'
   gem 'capybara', '~> 2.4.4'
 end
-
-ruby "2.2.0"
