@@ -22,7 +22,7 @@
             <li class="top-row">
               <span class="grayed"><%= index + 1 %>.</span>
 
-              <%= link_to post.title, "https://www.#{post.url}", class: "post-title" %>
+              <%= link_to post.title, post.url, class: "post-title" %>
 
               <span class="post-url">
                 (<%= post.url %>)
